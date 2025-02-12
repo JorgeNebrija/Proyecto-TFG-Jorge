@@ -46,7 +46,7 @@ fun PantallaLogin(navController: NavController, signInLauncher: ActivityResultLa
 // Lógica de inicio de sesión con Google
 fun onGoogleSignIn(activity: Context, signInLauncher: ActivityResultLauncher<Intent>) {
     val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-        .requestIdToken("YOUR_WEB_CLIENT_ID") // Reemplaza con tu Web Client ID
+        .requestIdToken("769654967618-s8e9fu0lq81tpuljh5821gfvb709p0vt.apps.googleusercontent.com") // Reemplaza con tu Web Client ID
         .requestEmail()
         .build()
 

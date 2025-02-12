@@ -85,8 +85,18 @@ fun PantallaLoginForm(
                 )
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(12.dp))
 
+            Text(
+                text = "Accede a tu cuenta y comienza ahora.",
+                style = TextStyle(
+                    color = Color.Gray,
+                    fontSize = 14.sp
+                ),
+                modifier = Modifier.padding(horizontal = 16.dp)
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
             BasicTextField(
                 value = email,
                 onValueChange = onEmailChange,

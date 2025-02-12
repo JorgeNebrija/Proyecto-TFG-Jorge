@@ -69,7 +69,7 @@ fun PantallaInicio(navController: NavController) {
             Image(
                 painter = painterResource(id = R.drawable.logosinfondo), // Reemplaza con tu recurso de logo
                 contentDescription = "Logo",
-                modifier = Modifier.size(150.dp) // Increased logo size
+                modifier = Modifier.size(130.dp) // Increased logo size
             )
             Text(
                 text = "Bienvenido a Athlo",
@@ -78,7 +78,6 @@ fun PantallaInicio(navController: NavController) {
                 fontWeight = FontWeight.Bold,
                 style = MaterialTheme.typography.headlineSmall,
                 modifier = Modifier
-                    .padding(bottom = 16.dp)
                     .align(Alignment.CenterHorizontally)
             )
             Spacer(modifier = Modifier.height(8.dp))

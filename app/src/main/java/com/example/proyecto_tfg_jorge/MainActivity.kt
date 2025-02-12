@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
 
         // Inicializa GoogleSignInClient dentro de onCreate
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("YOUR_WEB_CLIENT_ID") // Reemplaza con tu ID de cliente web de Firebase
+            .requestIdToken("769654967618-s8e9fu0lq81tpuljh5821gfvb709p0vt.apps.googleusercontent.com") // Reemplaza con tu ID de cliente web de Firebase
             .requestEmail()
             .build()
 

@@ -8,7 +8,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.proyecto_tfg_jorge.design.screens.PantallaInicio
+import com.example.proyecto_tfg_jorge.design.screens.PantallaMaps
 import com.example.proyecto_tfg_jorge.design.screens.PantallaMenu
+import com.example.proyecto_tfg_jorge.design.screens.PantallaProfile
+import com.example.proyecto_tfg_jorge.design.screens.PantallaRegister
+import com.example.proyecto_tfg_jorge.design.screens.PantallaSocialNetwork
 import com.example.proyecto_tfg_jorge.functionality.auth.PantallaLogin
 import com.example.proyecto_tfg_jorge.functionality.auth.PantallaLoginFormScreen
 
@@ -28,6 +32,16 @@ fun NavigationWrapper(
             )
         }
         composable("pantallaLoginForm") { PantallaLoginFormScreen(navHostController) }
-        composable("pantallaMenu") { PantallaMenu() }
+        composable("pantallaMenu") { PantallaMenu(navHostController) }
+        composable("pantallaMaps") { PantallaMaps(navHostController) }
+        composable("pantallaRegister") { PantallaRegister(navHostController) }
+        composable("pantallaSocialNetwork") { PantallaSocialNetwork(navHostController) }
+        composable("pantallaProfile") { PantallaProfile(navHostController) }
     }
-}
+    }
+
+
+
+
+
+
