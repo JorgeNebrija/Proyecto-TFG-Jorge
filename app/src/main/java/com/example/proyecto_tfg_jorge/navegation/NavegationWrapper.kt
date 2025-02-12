@@ -7,14 +7,14 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.proyecto_tfg_jorge.design.screens.PantallaInicio
 import com.example.proyecto_tfg_jorge.design.screens.PantallaMaps
 import com.example.proyecto_tfg_jorge.design.screens.PantallaMenu
 import com.example.proyecto_tfg_jorge.design.screens.PantallaProfile
 import com.example.proyecto_tfg_jorge.design.screens.PantallaRegister
 import com.example.proyecto_tfg_jorge.design.screens.PantallaSocialNetwork
-import com.example.proyecto_tfg_jorge.functionality.auth.PantallaLogin
-import com.example.proyecto_tfg_jorge.functionality.auth.PantallaLoginFormScreen
+import com.example.proyecto_tfg_jorge.design.screens.login.PantallaInicio
+import com.example.proyecto_tfg_jorge.design.screens.login.PantallaLogin2
+import com.example.proyecto_tfg_jorge.design.screens.login.PantallaRegister2
 
 @Composable
 fun NavigationWrapper(
@@ -24,14 +24,10 @@ fun NavigationWrapper(
 ) {
     NavHost(navController = navHostController, startDestination = "pantallaInicio") {
         composable("pantallaInicio") { PantallaInicio(navHostController) }
-        composable("pantallaLogin") {
-            PantallaLogin(
-                navController = navHostController,
-                signInLauncher = signInLauncher, // Pasamos el launcher a PantallaLogin
-                context = context // Pasamos el contexto correctamente
-            )
+        composable("pantallaLogin2") {
+            PantallaLogin2(navHostController)
         }
-        composable("pantallaLoginForm") { PantallaLoginFormScreen(navHostController) }
+        composable("pantallaRegister2") { PantallaRegister2(navHostController) }
         composable("pantallaMenu") { PantallaMenu(navHostController) }
         composable("pantallaMaps") { PantallaMaps(navHostController) }
         composable("pantallaRegister") { PantallaRegister(navHostController) }

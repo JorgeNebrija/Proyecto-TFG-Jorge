@@ -1,4 +1,4 @@
-package com.example.proyecto_tfg_jorge.design.screens
+package com.example.proyecto_tfg_jorge.design.screens.login
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
@@ -30,7 +30,7 @@ import kotlinx.coroutines.delay
 fun PantallaInicio(navController: NavController) {
     LaunchedEffect(Unit) {
         delay(3500) // Espera 3 segundos
-        navController.navigate("PantallaLogin") // Navega a la pantalla principal
+        navController.navigate("PantallaLogin2") // Navega a la pantalla principal
     }
 
     Box(
