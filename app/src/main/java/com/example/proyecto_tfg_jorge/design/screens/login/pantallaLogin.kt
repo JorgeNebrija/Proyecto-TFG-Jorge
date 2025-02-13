@@ -58,7 +58,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaLogin2(navHostController: NavHostController) {
+fun PantallaLogin(navHostController: NavHostController) {
     val auth = FirebaseAuth.getInstance()
     val context = LocalContext.current
     val message = remember { mutableStateOf("") }
@@ -285,7 +285,7 @@ fun PantallaLogin2(navHostController: NavHostController) {
                 text = "Registrarse",
                 color = Color(0xFF00C853),
                 fontSize = 14.sp,
-                modifier = Modifier.clickable { navHostController.navigate("PantallaRegister") }
+                modifier = Modifier.clickable { navHostController.navigate("pantallaRegister") }
             )
         }
     }
@@ -294,7 +294,7 @@ fun PantallaLogin2(navHostController: NavHostController) {
 // Función para gestionar el flujo después del inicio de sesión exitoso
 fun handlePostLogin(navHostController: NavHostController, context: Context) {
     navHostController.navigate("pantallaMenu") {
-        popUpTo("login") { inclusive = true } // Elimina la pantalla de login del stack de navegación
+        popUpTo("pantallaLogin") { inclusive = true } // Elimina la pantalla de login del stack de navegación
     }
 }
 

@@ -7,7 +7,7 @@ import androidx.navigation.NavHostController
 import com.example.proyecto_tfg_jorge.design.components.BottomNavigationBar
 
 @Composable
-fun PantallaRegister (navController: NavHostController){
+fun PantallaTraining (navController: NavHostController){
 
 
     Column {

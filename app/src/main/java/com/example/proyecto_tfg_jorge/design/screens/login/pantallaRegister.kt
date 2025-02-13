@@ -50,7 +50,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PantallaRegister2(navHostController: NavHostController) {
+fun PantallaRegister(navHostController: NavHostController) {
     // Instancia de FirebaseAuth para autenticar usuarios
     val auth = FirebaseAuth.getInstance()
 
@@ -208,7 +208,7 @@ fun RegisterField(
         modifier = Modifier
             .fillMaxWidth(0.85f)
             .height(60.dp)
-            .padding(vertical = 3.dp),
+            .padding(vertical = 4.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -238,8 +238,6 @@ fun RegisterField(
             singleLine = true
         )
 
-        // Agrega el espacio entre campos
-        Spacer(modifier = Modifier.height(14.dp)) // Ajusta el valor según lo que necesites
     }
 }
 

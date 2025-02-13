@@ -30,7 +30,7 @@ import kotlinx.coroutines.delay
 fun PantallaInicio(navController: NavController) {
     LaunchedEffect(Unit) {
         delay(3500) // Espera 3 segundos
-        navController.navigate("PantallaLogin2") // Navega a la pantalla principal
+        navController.navigate("PantallaLogin") // Navega a la pantalla principal
     }
 
     Box(
