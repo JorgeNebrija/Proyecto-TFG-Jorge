@@ -12,8 +12,8 @@ object NavigationActions {
         navController.navigate("pantallaMaps")
     }
 
-    fun irAPantallaRegister(navController: NavController) {
-        navController.navigate("pantallaRegister")
+    fun irAPantallaTraining(navController: NavController) {
+        navController.navigate("pantallaTraining")
     }
 
     fun irAPantallaSocialNetwork(navController: NavController) {
