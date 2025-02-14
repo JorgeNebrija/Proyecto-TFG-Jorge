@@ -59,6 +59,7 @@ dependencies {
     implementation(libs.androidx.espresso.core)
     implementation(libs.firebase.auth.ktx)
     implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.storage.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -71,4 +72,6 @@ dependencies {
     implementation ("com.google.firebase:firebase-auth-ktx")
     implementation ("com.google.android.gms:play-services-auth") // Para Google Sign-In
     implementation ("com.google.firebase:firebase-auth")
+    implementation("io.coil-kt:coil-compose:2.2.2")
+
 }
