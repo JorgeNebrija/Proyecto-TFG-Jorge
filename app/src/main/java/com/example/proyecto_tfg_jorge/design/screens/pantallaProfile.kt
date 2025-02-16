@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -49,7 +50,6 @@ fun PantallaProfile(navController: NavHostController) {
     val gradient = Brush.verticalGradient(
         colors = listOf(Color(0xFF00C853), Color.Black)
     )
-
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -61,22 +61,21 @@ fun PantallaProfile(navController: NavHostController) {
                 .verticalScroll(rememberScrollState())
         ) {
             Header(navController)
-            ProfileSection()
+            ProfileSection(navController)
             Spacer(modifier = Modifier.height(16.dp))
-            SettingsSection()
+            SettingsSection(navController)
         }
     }
 }
 
 @Composable
-fun ProfileSection() {
+fun ProfileSection(navController: NavHostController) {
     var name by remember { mutableStateOf("Cargando...") }
     var email by remember { mutableStateOf("Cargando...") }
     var phone by remember { mutableStateOf("Cargando...") }
     var imageUrl by remember { mutableStateOf<String?>(null) }
     val userId = FirebaseAuth.getInstance().currentUser?.uid
 
-    // Recuperar datos del usuario
     LaunchedEffect(userId) {
         if (userId != null) {
             val db = FirebaseFirestore.getInstance()
@@ -84,7 +83,7 @@ fun ProfileSection() {
             name = userDoc.getString("name") ?: "Sin nombre"
             email = userDoc.getString("email") ?: "Sin email"
             phone = userDoc.getString("phone") ?: "Sin teléfono"
-            imageUrl = userDoc.getString("imageUrl") // URL de la imagen
+            imageUrl = userDoc.getString("imageUrl")
         }
     }
 
@@ -109,7 +108,6 @@ fun ProfileSection() {
         verticalArrangement = Arrangement.Center
     ) {
         Spacer(modifier = Modifier.height(16.dp))
-
         Box(
             modifier = Modifier
                 .size(120.dp)
@@ -134,13 +132,12 @@ fun ProfileSection() {
                 )
             }
         }
-
         Spacer(modifier = Modifier.height(8.dp))
         Text(name, fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Color.White)
         Spacer(modifier = Modifier.height(8.dp))
-        Text("$email", fontSize = 14.sp, color = Color.White)
+        Text(email, fontSize = 14.sp, color = Color.White)
         Spacer(modifier = Modifier.height(8.dp))
-        Text("$phone", fontSize = 14.sp, color = Color.White)
+        Text(phone, fontSize = 14.sp, color = Color.White)
     }
 }
 
@@ -155,24 +152,26 @@ private fun uploadImageToFirebase(uri: Uri, userId: String?, onComplete: (String
 }
 
 @Composable
-fun SettingsSection() {
+fun SettingsSection(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
+            .fillMaxHeight()
             .padding(horizontal = 16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        SettingItem("Editar información de perfil")
-        SettingItem("Notificaciones", "ON")
-        SettingItem("Idioma", "Español")
-        SettingItem("Tema", "Modo claro")
-        SettingItem("Contáctanos")
-        SettingItem("Política de privacidad")
+        SettingItem(navController, "Editar información de perfil")
+        SettingItem(navController, "Notificaciones", "ON")
+        SettingItem(navController, "Idioma", "Español")
+        SettingItem(navController, "Tema", "Modo claro")
+        SettingItem(navController, "Contáctanos")
+        SettingItem(navController, "Política de privacidad")
     }
-    }
+}
 
 @Composable
-fun SettingItem(title: String, value: String? = null) {
+fun SettingItem(navController: NavHostController, title: String, value: String? = null) {
     Row(
         modifier = Modifier
             .fillMaxWidth()

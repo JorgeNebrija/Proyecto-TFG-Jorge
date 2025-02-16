@@ -17,7 +17,7 @@ import com.example.proyecto_tfg_jorge.design.screens.login.PantallaRegister
 fun NavigationWrapper(
     navHostController: NavHostController,
 ) {
-    NavHost(navController = navHostController, startDestination = "pantallaProfile") {
+    NavHost(navController = navHostController, startDestination = "pantallaInicio") {
         composable("pantallaInicio") { PantallaInicio(navHostController) }
         composable("pantallaLogin") { PantallaLogin(navHostController) }
         composable("pantallaRegister") { PantallaRegister(navHostController) }

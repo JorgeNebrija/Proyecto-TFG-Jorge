@@ -12,13 +12,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.proyecto_tfg_jorge.R
 import com.example.proyecto_tfg_jorge.navegation.NavigationActions
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Header(navController: NavController) {
+fun Header(navController: NavHostController) {
     TopAppBar(
         title = {
             Image(

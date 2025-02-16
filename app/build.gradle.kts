@@ -46,6 +46,7 @@ android {
 }
 
 dependencies {
+    // Dependencias ya existentes
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -60,6 +61,7 @@ dependencies {
     implementation(libs.firebase.auth.ktx)
     implementation(libs.firebase.firestore.ktx)
     implementation(libs.firebase.storage.ktx)
+    implementation(libs.play.services.maps)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -73,5 +75,7 @@ dependencies {
     implementation ("com.google.android.gms:play-services-auth") // Para Google Sign-In
     implementation ("com.google.firebase:firebase-auth")
     implementation("io.coil-kt:coil-compose:2.2.2")
+    implementation ("org.osmdroid:osmdroid-android:6.1.14")
+
 
 }

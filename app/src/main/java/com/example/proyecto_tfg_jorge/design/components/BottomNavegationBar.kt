@@ -46,20 +46,6 @@ fun BottomNavigationBar(navController: NavHostController) {
                     modifier = Modifier.size(34.dp)
                 )
             }
-
-            // Segundo ícono (Perfil)
-            IconButton(
-                onClick = { NavigationActions.irAPantallaProfile(navController) },
-                modifier = Modifier.weight(1f),
-            ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_perfil),
-                    contentDescription = "Perfil",
-                    tint = if (currentRoute == "pantallaProfile") Color.White else Color(0xFF00C853), // Icono blanco si estamos en el perfil
-                    modifier = Modifier.size(34.dp)
-                )
-            }
-
             // Tercer ícono (Mapas)
             IconButton(
                 onClick = { NavigationActions.irAPantallaMaps(navController) },
@@ -86,7 +72,6 @@ fun BottomNavigationBar(navController: NavHostController) {
                 )
             }
 
-            // Quinto ícono (Registrar)
             IconButton(
                 onClick = { NavigationActions.irAPantallaTraining(navController) },
                 modifier = Modifier.weight(1f),
@@ -95,6 +80,17 @@ fun BottomNavigationBar(navController: NavHostController) {
                     painter = painterResource(id = R.drawable.ic_registrar),
                     contentDescription = "Registrar",
                     tint = if (currentRoute == "pantallaTraining") Color.White else Color(0xFF00C853), // Icono blanco si estamos en registrar
+                    modifier = Modifier.size(34.dp)
+                )
+            }
+            IconButton(
+                onClick = { NavigationActions.irAPantallaProfile(navController) },
+                modifier = Modifier.weight(1f),
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_perfil),
+                    contentDescription = "Perfil",
+                    tint = if (currentRoute == "pantallaProfile") Color.White else Color(0xFF00C853), // Icono blanco si estamos en el perfil
                     modifier = Modifier.size(34.dp)
                 )
             }
