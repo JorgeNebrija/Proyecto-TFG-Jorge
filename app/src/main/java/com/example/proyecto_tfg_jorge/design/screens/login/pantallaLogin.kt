@@ -23,8 +23,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Checkbox
-import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -186,26 +184,7 @@ fun PantallaLogin(navHostController: NavHostController) {
             singleLine = true
         )
 
-        Spacer(modifier = Modifier.height(8.dp))
 
-        Row(
-            modifier = Modifier.fillMaxWidth(0.85f),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Checkbox(
-                checked = rememberMe.value,
-                onCheckedChange = { rememberMe.value = it },
-                colors = CheckboxDefaults.colors(Color.Gray)
-            )
-
-            Text(text = "Recuérdame", color = Color.Gray)
-            Spacer(modifier = Modifier.weight(1f))
-            Text(
-                text = "¿Olvidaste tu contraseña?",
-                color = Color(0xFF00C853),
-                modifier = Modifier.clickable { navHostController.navigate("pantallaRecuperarContrasena") }
-            )
-        }
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -261,7 +240,7 @@ fun PantallaLogin(navHostController: NavHostController) {
             shape = RoundedCornerShape(8.dp)
         ) {
             Icon(
-                painter = painterResource(id = R.drawable.ic_google),
+                painter = painterResource(id = R.drawable.iconogoogle),
                 contentDescription = "Google Icon",
                 tint = Color.Unspecified,
                 modifier = Modifier.size(20.dp)

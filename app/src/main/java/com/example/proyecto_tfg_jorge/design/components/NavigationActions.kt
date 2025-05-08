@@ -8,8 +8,8 @@ object NavigationActions {
         navController.navigate("pantallaMenu")
     }
 
-    fun irAPantallaMaps(navController: NavController) {
-        navController.navigate("pantallaMaps")
+    fun irAPantallaMensajes(navController: NavController) {
+        navController.navigate("mensajes")
     }
 
     fun irAPantallaTraining(navController: NavController) {

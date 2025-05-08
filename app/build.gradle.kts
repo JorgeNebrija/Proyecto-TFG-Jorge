@@ -43,6 +43,11 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
+    packaging {
+        resources {
+            excludes += "META-INF/DEPENDENCIES"
+        }
+    }
 }
 
 dependencies {
@@ -62,6 +67,7 @@ dependencies {
     implementation(libs.firebase.firestore.ktx)
     implementation(libs.firebase.storage.ktx)
     implementation(libs.play.services.maps)
+    implementation(libs.play.services.location)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -76,6 +82,17 @@ dependencies {
     implementation ("com.google.firebase:firebase-auth")
     implementation("io.coil-kt:coil-compose:2.2.2")
     implementation ("org.osmdroid:osmdroid-android:6.1.14")
+    implementation("com.google.firebase:firebase-messaging:24.0.0")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.google.auth:google-auth-library-oauth2-http:1.18.0")
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation ("com.google.firebase:firebase-firestore-ktx:24.7.1")
+    implementation ("com.github.Abhimanyu14:compose-emoji-picker:1.0.0-alpha16")
+    implementation ("androidx.emoji2:emoji2-emojipicker:1.4.0-beta05")
+
 
 
 }

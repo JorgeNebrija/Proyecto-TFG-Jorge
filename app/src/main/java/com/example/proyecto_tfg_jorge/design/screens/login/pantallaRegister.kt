@@ -86,7 +86,7 @@ fun PantallaRegister(navHostController: NavHostController) {
                     .padding(start = 16.dp)
                     .size(24.dp)
                     .clickable {
-                        navHostController.navigate("PantallaLogin2") // Navega de vuelta a la pantalla de inicio de sesión
+                        navHostController.navigate("PantallaLogin") // Navega de vuelta a la pantalla de inicio de sesión
                     },
                 tint = Color.White
             )
@@ -157,7 +157,7 @@ fun PantallaRegister(navHostController: NavHostController) {
             },
             modifier = Modifier
                 .fillMaxWidth(0.85f)
-                .height(35.dp),
+                .height(50.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00C853)),
             shape = RoundedCornerShape(8.dp)
         ) {
@@ -189,7 +189,7 @@ fun PantallaRegister(navHostController: NavHostController) {
                 color = Color(0xFF00C853),
                 fontSize = 14.sp,
                 modifier = Modifier.clickable {
-                    navHostController.navigate("pantallaLogin2")
+                    navHostController.navigate("pantallaLogin")
                 }
             )
         }
@@ -206,7 +206,7 @@ fun RegisterField(
 ) {
     Column(
         modifier = Modifier
-            .fillMaxWidth(0.85f)
+            .fillMaxWidth()
             .height(60.dp)
             .padding(vertical = 4.dp),
         horizontalAlignment = Alignment.CenterHorizontally,

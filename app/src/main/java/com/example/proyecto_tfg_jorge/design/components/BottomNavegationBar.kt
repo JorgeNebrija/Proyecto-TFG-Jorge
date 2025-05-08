@@ -48,13 +48,13 @@ fun BottomNavigationBar(navController: NavHostController) {
             }
             // Tercer ícono (Mapas)
             IconButton(
-                onClick = { NavigationActions.irAPantallaMaps(navController) },
+                onClick = { NavigationActions.irAPantallaMensajes(navController) },
                 modifier = Modifier.weight(1f),
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_mapa),
-                    contentDescription = "Mapas",
-                    tint = if (currentRoute == "pantallaMaps") Color.White else Color(0xFF00C853), // Icono blanco si estamos en los mapas
+                    contentDescription = "Chat",
+                    tint = if (currentRoute == "mensajes") Color.White else Color(0xFF00C853), // Icono blanco si estamos en los mapas
                     modifier = Modifier.size(34.dp)
                 )
             }
